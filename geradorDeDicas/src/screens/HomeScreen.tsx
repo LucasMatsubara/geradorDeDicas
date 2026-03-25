@@ -27,7 +27,7 @@ export default function HomeScreen() {
   }, []);
 
   return (
-    <LinearGradient colors={['#e6f0fa', '#d0e3fc']} style={styles.container}>
+    <LinearGradient colors={['#eaf2fa', '#cbdffa']} style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <Text style={styles.headerTitle}>Gerador de Dicas</Text>
 
@@ -46,3 +46,73 @@ export default function HomeScreen() {
     </LinearGradient>
   );
 }
+
+const stylePage = StyleSheet.create({
+  container: { flex: 1 },
+  safeArea: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'space-between', 
+    paddingVertical: 70, 
+  },
+  headerTitle: {
+    fontSize: 32, 
+    fontWeight: '900', 
+    color: '#202b3d',
+  },
+  card: {
+    backgroundColor: '#f0f0f0',
+    width: Dimensions.get('window').width * 0.90, 
+    paddingHorizontal: 32,
+    paddingTop: 62, 
+    paddingBottom: 42,
+    borderRadius: 22,
+    alignItems: 'center',
+    minHeight: 300, 
+    justifyContent: 'center',
+    shadowColor: '#4785f8', 
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.15,
+    shadowRadius: 20,
+    elevation: 8,
+  },
+  iconCircle: {
+    width: 92, 
+    height: 92,
+    borderRadius: 45, 
+    backgroundColor: '#fcfae6', 
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: -45, 
+    shadowColor: '#f7d83e', 
+    shadowOffset: { width: 0, height: 0 }, 
+    shadowOpacity: 0.9,
+    shadowRadius: 15,
+    elevation: 12, 
+  },
+  tipText: {
+    fontSize: 21, 
+    color: '#334155',
+    textAlign: 'center',
+    lineHeight: 30,
+    fontWeight: '700', 
+  },
+  button: {
+    backgroundColor: '#3a7fee',
+    width: Dimensions.get('window').width * 0.90, 
+    paddingVertical: 20, 
+    borderRadius: 30,
+    alignItems: 'center',
+    shadowColor: '#3e85f7',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.4,
+    shadowRadius: 15,
+    elevation: 5,
+  },
+  buttonText: {
+    color: '#f0f0f0',
+    fontSize: 19,
+    fontWeight: 'bold',
+  },
+});
