@@ -15,7 +15,7 @@ const tips: string[] = [
 ];
 
 export default function HomeScreen() {
-  const [Tip, setTip] = useState<string>('');
+  const [tip, setTip] = useState<string>('');
 
   const generateTip = (): void => {
     const index = Math.floor(Math.random() * tips.length);
@@ -36,7 +36,7 @@ export default function HomeScreen() {
             <MaterialCommunityIcons name="lightbulb-outline" size={50} color="#eab308" />
           </View>
           
-          <Text style={styles.tipText}>{currentTip}</Text>
+          <Text style={styles.tipText}>{tip}</Text>
         </View>
 
         <TouchableOpacity style={styles.button} onPress={generateTip} activeOpacity={0.8}>
@@ -47,7 +47,7 @@ export default function HomeScreen() {
   );
 }
 
-const stylePage = StyleSheet.create({
+const styles = StyleSheet.create({
   container: { flex: 1 },
   safeArea: {
     flex: 1,
