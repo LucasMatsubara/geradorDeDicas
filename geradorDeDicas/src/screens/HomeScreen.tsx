@@ -15,9 +15,34 @@ const tips: string[] = [
 ];
 
 export default function HomeScreen() {
-  const [tip, setTip] = useState<string>('');
+  const [Tip, setTip] = useState<string>('');
 
   const generateTip = (): void => {
     const index = Math.floor(Math.random() * tips.length);
     setTip(tips[index]);
   };
+
+  useEffect(() => {
+    generateTip();
+  }, []);
+
+  return (
+    <LinearGradient colors={['#e6f0fa', '#d0e3fc']} style={styles.container}>
+      <SafeAreaView style={styles.safeArea}>
+        <Text style={styles.headerTitle}>Gerador de Dicas</Text>
+
+        <View style={styles.card}>
+          <View style={styles.iconCircle}>
+            <MaterialCommunityIcons name="lightbulb-outline" size={50} color="#eab308" />
+          </View>
+          
+          <Text style={styles.tipText}>{currentTip}</Text>
+        </View>
+
+        <TouchableOpacity style={styles.button} onPress={generateTip} activeOpacity={0.8}>
+          <Text style={styles.buttonText}>Nova Dica</Text>
+        </TouchableOpacity>
+      </SafeAreaView>
+    </LinearGradient>
+  );
+}
